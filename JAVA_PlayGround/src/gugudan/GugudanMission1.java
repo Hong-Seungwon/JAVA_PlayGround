@@ -6,7 +6,7 @@ public class GugudanMission1 {
 	
 
 	public static void main(String[] args) {
-		System.out.print("���� �Է� : ");
+		System.out.print("숫자 입력 : ");
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
     
