@@ -6,11 +6,11 @@ public class GugudanMission1 {
 	
 
 	public static void main(String[] args) {
-		System.out.print("¼ýÀÚ ÀÔ·Â : ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
     
-		// ¼¼·Î
+		// ì„¸ë¡œ
 		for(int i = 2; i <= num; i++) {
 			for(int j = 1; j <= num; j++) {
 				System.out.println(i + " * " + j + " = " + i * j);
@@ -18,7 +18,7 @@ public class GugudanMission1 {
 			System.out.println();
 		}
 		System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-		// °¡·Î
+		// ê°€ë¡œ
 		for(int i = 1; i <= num; i++) {
 			for(int j = 2; j <= num; j++) {
 				System.out.print(j + " * " + i + " = " + i * j + "\t");
