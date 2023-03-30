@@ -4,13 +4,26 @@ import java.util.Scanner;
 
 public class Calendar {
 	private static final int[] MAX_DAYS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	private static final int[] LEAP_MAX_DAYS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	
+	public boolean isLeapYear(int year) {
+		if(year % 4 == 0 && (year % 100 != 0 || year % 400 != 0)) {
+			return true;
+		}else {
+		return false;
+		}
+	}
 	
 //	public int maxDaysOfMonth(int month) {
 //		return MAX_DAYS[month -1];
 //	}
 	
-	public int getMaxDaysOfMonth(int month) {
+	public int getMaxDaysOfMonth(int year, int month) {
+		if(isLeapYear(year)) {
+			return LEAP_MAX_DAYS[month - 1];
+		}else {
 		return MAX_DAYS[month - 1];
+		}
 	}
 
 	/*
@@ -26,7 +39,7 @@ public class Calendar {
 		System.out.println(" SU MO TU WE TH FR SA");
 		System.out.println("---------------------");
 		
-		int maxDay = getMaxDaysOfMonth(month);
+		int maxDay = getMaxDaysOfMonth(year, month);
 		
 		for(int i = 1; i <= maxDay; i++) {
 			System.out.printf("%3d", i);
@@ -70,9 +83,9 @@ public class Calendar {
 //			System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.maxDaysOfMonth(month));
 //			sc.close();
 		
-			String PROMPT = "cal> ";
-			Scanner sc = new Scanner(System.in);
-			Calendar cal = new Calendar();
+//			String PROMPT = "cal> ";
+//			Scanner sc = new Scanner(System.in);
+//			Calendar cal = new Calendar();
 			
 //			System.out.println("반복 횟수를 입력하세요.");
 //			int repeat = sc.nextInt();
@@ -85,23 +98,23 @@ public class Calendar {
 //			}
 //			cal.printSampleCalendar();
 			
-			int month = 1;
+//			int month = 1;
 			
-			while(true) {
-				System.out.println("달을 입력하세요");
-				System.out.print(PROMPT);
-				month = sc.nextInt();
-				if(month == -1) {
-					break;
-				}
+//			while(true) {
+//				System.out.println("달을 입력하세요");
+//				System.out.print(PROMPT);
+//				month = sc.nextInt();
+//				if(month == -1) {
+//					break;
+//				}
 				
-				if(month > 12) {
-					continue;
-				}
-				System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.getMaxDaysOfMonth(month));
-			}
+//				if(month > 12) {
+//					continue;
+//				}
+//				System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.getMaxDaysOfMonth(month));
+//			}
 			
-			System.out.println("Bye~");
-			sc.close();
+//			System.out.println("Bye~");
+//			sc.close();
 	}
 }
