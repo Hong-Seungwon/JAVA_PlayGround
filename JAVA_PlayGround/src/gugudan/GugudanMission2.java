@@ -28,6 +28,7 @@ public class GugudanMission2 {
 				System.out.printf(j + " * " + i + "\t");
 			}
 			System.out.println();
-		}			
+		}
+		sc.close();
 	}
 }

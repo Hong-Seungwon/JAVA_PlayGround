@@ -25,6 +25,6 @@ public class GugudanMission1 {
 			}
 			System.out.println();
 		}
-		
+		sc.close();
 	}
 }
