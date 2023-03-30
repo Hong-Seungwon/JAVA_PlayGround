@@ -51,18 +51,37 @@ public class Calendar {
 //			System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.maxDaysOfMonth(month));
 //			sc.close();
 		
+			String PRMOMPT = "cal> ";
 			Scanner sc = new Scanner(System.in);
 			Calendar cal = new Calendar();
 			
-			System.out.println("반복 횟수를 입력하세요.");
-			int repeat = sc.nextInt();
+//			System.out.println("반복 횟수를 입력하세요.");
+//			int repeat = sc.nextInt();
+		
+//			for(int i = 0; i < repeat; i++) {				
+//				System.out.println("달을 입력하세요");
+//				System.out.print(PRMOMPT);
+//				int month = sc.nextInt();
+//				System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.getMaxDaysOfMonth(month));
+//			}
+//			cal.printSampleCalendar();
 			
-			for(int i = 0; i < repeat; i++) {				
+			int month = 1;
+			
+			while(month != -1) {
 				System.out.println("달을 입력하세요");
-				int month = sc.nextInt();
+				System.out.print(PRMOMPT);
+				month = sc.nextInt();
+				if(month == -1) {
+					break;
+				}
+				
+				if(month > 12) {
+					continue;
+				}
 				System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.getMaxDaysOfMonth(month));
 			}
-//			cal.printSampleCalendar();
+			
 			System.out.println("Bye~");
 			sc.close();
 	}
